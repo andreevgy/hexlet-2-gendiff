@@ -11,7 +11,7 @@
     "url": "git+https://github.com/andreevgy/frontend-project-lvl2.git"
   },
   "bin": {
-    "gediff": "bin/gendiff.js"
+    "gendiff": "bin/gendiff.js"
   },
   "type": "module",
   "author": "Gleb Andreev",
