@@ -1,0 +1,26 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "Package that shows difference between two objects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreevgy/frontend-project-lvl2.git"
+  },
+  "bin": {
+    "gediff": "bin/gendiff.js"
+  },
+  "type": "module",
+  "author": "Gleb Andreev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreevgy/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/andreevgy/frontend-project-lvl2#readme",
+  "dependencies": {
+    "commander": "^8.3.0"
+  }
+}
