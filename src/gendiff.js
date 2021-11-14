@@ -2,7 +2,7 @@ import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 import jsYaml from 'js-yaml';
-import stylish from './formatters/stylish.js';
+import formatTree from './formatters/index.js';
 
 const compareObjects = (object1, object2) => {
   const keys = _.sortBy(_.union(Object.keys(object1), Object.keys(object2)));
@@ -43,10 +43,7 @@ const genDiff = (path1, path2, format = 'stylish') => {
   if (yamlExtensions.includes(file1Extension) && yamlExtensions.includes(file2Extension)) {
     fields = buildTree(jsYaml.load(file1), jsYaml.load(file2));
   }
-  if (format === 'stylish') {
-    return stylish(fields);
-  }
-  return '';
+  return formatTree(fields, format);
 };
 
 export default genDiff;
