@@ -4,11 +4,14 @@
   "description": "Package that shows difference between two objects",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andreevgy/frontend-project-lvl2.git"
+  },
+  "engines": {
+    "node": ">=14"
   },
   "bin": {
     "gendiff": "bin/gendiff.js"
@@ -23,5 +26,12 @@
   "dependencies": {
     "commander": "^8.3.0",
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "jest": "^27.3.1"
   }
 }
