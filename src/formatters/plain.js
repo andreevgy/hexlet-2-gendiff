@@ -11,10 +11,7 @@ const stringify = (data) => {
 };
 
 const styleField = (field, parentFieldsKeys = []) => {
-  const fieldKeys = [...parentFieldsKeys];
-  if (!_.isNil(field.key)) {
-    fieldKeys.push(field.key);
-  }
+  const fieldKeys = _.compact([...parentFieldsKeys, field.key]);
   const fieldName = fieldKeys.join('.');
   switch (field.type) {
     case 'root': {
