@@ -39,3 +39,19 @@ test('gendiff works correctly for yaml files with plain output', () => {
   const result = genDiff(file1, file2, 'plain');
   expect(result).toEqual(expected);
 });
+
+test('gendiff works correctly for json files with json output', () => {
+  const file1 = getFixturePath('file1.json');
+  const file2 = getFixturePath('file2.json');
+  const expected = fs.readFileSync(getFixturePath('json_output.txt'), 'utf8');
+  const result = genDiff(file1, file2, 'json');
+  expect(result).toEqual(expected);
+});
+
+test('gendiff works correctly for yaml files with json output', () => {
+  const file1 = getFixturePath('file1.yaml');
+  const file2 = getFixturePath('file2.yml');
+  const expected = fs.readFileSync(getFixturePath('json_output.txt'), 'utf8');
+  const result = genDiff(file1, file2, 'json');
+  expect(result).toEqual(expected);
+});
