@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const indent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount);
+const indent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 2);
 
 const stringify = (data, depth, styleField) => {
   if (!_.isObject(data)) {
