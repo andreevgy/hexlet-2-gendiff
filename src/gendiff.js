@@ -36,14 +36,15 @@ const genDiff = (path1, path2, format = 'stylish') => {
   const file2Extension = _.last(path2.split('.'));
   const file1 = fs.readFileSync(path.resolve(path1), 'utf8');
   const file2 = fs.readFileSync(path.resolve(path2), 'utf8');
-  let fields = [];
   if (file1Extension === file2Extension && file1Extension === 'json') {
-    fields = buildTree(JSON.parse(file1), JSON.parse(file2));
+    const fields = buildTree(JSON.parse(file1), JSON.parse(file2));
+    return formatTree(fields, format);
   }
   if (yamlExtensions.includes(file1Extension) && yamlExtensions.includes(file2Extension)) {
-    fields = buildTree(jsYaml.load(file1), jsYaml.load(file2));
+    const fields = buildTree(jsYaml.load(file1), jsYaml.load(file2));
+    return formatTree(fields, format);
   }
-  return formatTree(fields, format);
+  return '';
 };
 
 export default genDiff;
