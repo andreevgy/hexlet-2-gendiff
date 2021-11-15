@@ -11,6 +11,6 @@ export default (node, formatType) => {
     case 'json':
       return json(node);
     default:
-      return '';
+      throw new Error(`Type ${formatType} is unsupported`);
   }
 };

@@ -1,4 +1,3 @@
-// Why not
-const styleField = (field) => JSON.stringify(field, null, '  ');
+const JSONFormatter = (field, spaceAmount = 2) => JSON.stringify(field, null, ' '.repeat(spaceAmount));
 
-export default styleField;
+export default JSONFormatter;
