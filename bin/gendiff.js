@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { program, Option } from 'commander';
-import cliAction from '../src/cli.js';
+import genDiff from '../src/gendiff';
 
 program
   .name('gendiff')
@@ -10,6 +10,8 @@ program
   .version('1.0.0')
   .helpOption('-h, --help', 'output usage information')
   .addOption(new Option('-f, --format [type]', 'output format').choices(['stylish', 'plain', 'json']).default('stylish'))
-  .action(cliAction);
+  .action((filepath1, filepath2, options) => {
+    console.log(genDiff(filepath1, filepath2, options.format));
+  });
 
 program.parse();
