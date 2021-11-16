@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { program, Option } from 'commander';
-import genDiff from '../src/gendiff';
+import genDiff from '../src/gendiff.js';
 
 program
   .name('gendiff')
