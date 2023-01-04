@@ -29,7 +29,8 @@ const variants = [
   },
 ];
 
-test.each(variants)('gendiff works correctly for $type files with $format output',
+test.each(variants)(
+  'gendiff works correctly for $type files with $format output',
   ({
     path1, path2, outputPath, format,
   }) => {
@@ -38,4 +39,5 @@ test.each(variants)('gendiff works correctly for $type files with $format output
     const expected = fs.readFileSync(getFixturePath(outputPath), 'utf8');
     const result = genDiff(file1, file2, format);
     expect(result).toEqual(expected);
-  });
+  },
+);
